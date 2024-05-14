@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      background: white;
+    }
+
+    .login-form {
+      position: relative;
+      width: 370px;
+      height: auto;
+      background: white;
+      padding: 40px 35px 60px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .text {
+      font-size: 30px;
+      color: #c7c7c7;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    form {
+      margin-top: 40px;
+    }
+
+    form .field {
+      margin-top: 20px;
+      display: flex;
+      background-color: white;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .field .fas {
+      height: 50px;
+      width: 60px;
+      color: #868686;
+      font-size: 20px;
+      line-height: 50px;
+      border: 1px solid #ffffff;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+      background: white
+    }
+
+    .field input,
+    form button {
+      height: 50px;
+      width: 100%;
+      outline: none;
+      font-size: 19px;
+      color: #868686;
+      padding: 0 15px;
+      border-radius: 0 5px 5px 0;
+      border: 1px solid #ffffff;
+      caret-color: #339933;
+      background: white
+    }
+
+    input:focus {
+      color: #339933;
+      box-shadow: 0 0 5px rgba(0, 255, 0, .2),
+        inset 0 0 5px rgba(0, 255, 0, .1);
+      /* background: white; */
+      animation: glow .8s ease-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% {
+        border-color: #339933;
+        box-shadow: 0 0 5px rgba(0, 255, 0, .2),
+          inset 0 0 5px rgba(0, 0, 0, .1);
+      }
+
+      100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0, 255, 0, .6),
+          inset 0 0 10px rgba(0, 255, 0, .4);
+      }
+    }
+
+    button {
+      margin-top: 30px;
+      border-radius: 5px !important;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: #993333;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .link {
+      margin-top: 25px;
+      color: #868686;
+    }
+
+    .link a {
+      color: #339933;
+      text-decoration: none;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-form">
+    <div class="text">
+      SIGNUP
+    </div>
+    <form method="POST" action="/user">
+
+      <div class="field">
+        <div class="fas fa-envelope"></div>
+        <input type="text" placeholder="Enter Your Name" name="name" required>
+      </div>
+      <div class="field">
+        <div class="fas fa-envelope"></div>
+        <input type="email" placeholder="Enter email" name="email" required>
+      </div>
+      <div class="field">
+        <div class="fas fa-lock"></div>
+        <input type="password" placeholder="Password" name="password" required>
+      </div>
+      <button type="submit">SIGNUP</button>
+      <div class="link">
+        Already have a member?
+        <a href="http://localhost:8000/login">Login now</a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

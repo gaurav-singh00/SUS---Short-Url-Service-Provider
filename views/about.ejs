@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .navContainer {
+            width: 100vw;
+            min-height: 50px;
+            background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+            background-color: rgb(255, 250, 250);
+            box-shadow: 1px 1px 10px black;
+        }
+
+        #navlogo {
+            font-size: 2rem;
+            margin: 4px;
+            padding: 6px;
+            color: azure;
+            margin-left: 10px;
+            font-family: 'Alumni Sans Collegiate One', sans-serif;
+        }
+
+        .navItems {
+            margin: 4px;
+            padding: 10px;
+            display: flex;
+            gap: 2rem;
+            font-size: 27px;
+            padding-right: 3rem;
+            margin-right: 25px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: azure;
+        }
+
+        .navItems-home {
+            transition: all 0.2s ease-out 0s;
+            transform: scale(1);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navItems-home:hover {
+            transform: scale(1.5);
+            /* box-shadow: 1px 1px 10px black; */
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .navItems-contact {
+            transition: all 0.2s ease-out 0s;
+            transform: scale(1);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navItems-contact:hover {
+            transform: scale(1.5);
+            /* box-shadow: 1px 1px 10px black; */
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .navItems-about {
+            transition: all 0.2s ease-out 0s;
+            transform: scale(1);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navItems-about:hover {
+            transform: scale(1.5);
+            /* box-shadow: 1px 1px 10px black; */
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .navList {
+            list-style: none;
+            display: flex;
+            font-size: 1.5rem;
+            justify-content: space-between;
+        }
+
+        .mainC {
+            width: 75%;
+            margin-left: 25%;
+            display: flex;
+            flex-direction: column;
+            /* gap: 10px; */
+            padding: 2.5rem;
+            box-shadow: 0px 0px 30px black;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        th {
+            text-align: left;
+        }
+        td a{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navContainer">
+        <nav>
+            <ul class="navList">
+                <li>
+                    <p id="navlogo" style="font-size: 1.4rem;">SUS - Short URL Service Provider</p>
+                </li>
+                <li>
+                    <div class="navItems">
+                        <a class="navItems-home" href="http://localhost:8000/">Home</a>
+                        <a class="navItems-contact" href="http://localhost:8000/contact">Contact</a>
+                        <a class="navItems-about" href="http://localhost:8000/about">About</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mainC">
+        A URL shortener is a tool that converts a long URL into a much shorter, more manageable version. These shorter
+        URLs redirect users to the original, long URL. The main purposes of using a URL shortener include:
+        <br><br>
+        <ul>
+            <li>Ease of Sharing: Short URLs are easier to share on social media, emails, and other platforms where space is
+                limited or a long URL might look unwieldy.
+            </li>
+            <li>
+                Tracking and Analytics: Many URL shorteners provide detailed analytics, such as the number of clicks, geographic
+                location of the clicks, and the referring sites.
+            </li>
+            <li>
+                Customization: Some services allow you to create custom short URLs that are easy to remember or brand-specific.
+                Cleaner Appearance: Shortened URLs look cleaner and more professional, which can be particularly beneficial in
+                marketing and promotional materials.
+            </li>
+        </ul>
+        <br>
+        
+        
+        Popular URL shortening services include Bitly, TinyURL, and Google's URL shortener (though it has been
+        discontinued). Users typically paste their long URL into the shortener tool, which then generates a shorter
+        version to use as needed.
+    </div>
+</body>
+
+</html>

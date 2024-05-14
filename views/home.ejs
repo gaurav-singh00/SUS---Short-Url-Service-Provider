@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .navContainer {
+            width: 100vw;
+            min-height: 50px;
+            background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+            background-color: rgb(255, 250, 250);
+            box-shadow: 1px 1px 10px black;
+        }
+
+        #navlogo {
+            font-size: 2rem;
+            margin: 4px;
+            padding: 6px;
+            color: azure;
+            margin-left: 10px;
+            font-family: 'Alumni Sans Collegiate One', sans-serif;
+        }
+
+        .navItems {
+            margin: 4px;
+            padding: 10px;
+            display: flex;
+            gap: 2rem;
+            font-size: 27px;
+            padding-right: 3rem;
+            margin-right: 25px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: azure;
+        }
+
+        .navItems-home {
+            transition: all 0.2s ease-out 0s;
+            transform: scale(1);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navItems-home:hover {
+            transform: scale(1.5);
+            /* box-shadow: 1px 1px 10px black; */
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .navItems-contact {
+            transition: all 0.2s ease-out 0s;
+            transform: scale(1);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navItems-contact:hover {
+            transform: scale(1.5);
+            /* box-shadow: 1px 1px 10px black; */
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .navItems-about {
+            transition: all 0.2s ease-out 0s;
+            transform: scale(1);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navItems-about:hover {
+            transform: scale(1.5);
+            /* box-shadow: 1px 1px 10px black; */
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .navList {
+            list-style: none;
+            display: flex;
+            font-size: 1.5rem;
+            justify-content: space-between;
+        }
+
+        .maincontent {
+            width: 75%;
+            margin-left: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            padding: 2.5rem;
+            box-shadow: 0px 0px 30px black;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        th {
+            text-align: left;
+        }
+
+
+        @keyframes glow {
+            0% {
+                border-color: #339933;
+                box-shadow: 0 0 5px rgba(0, 255, 0, .2),
+                    inset 0 0 5px rgba(0, 0, 0, .1);
+            }
+
+            100% {
+                border-color: #6f6;
+                box-shadow: 0 0 20px rgba(0, 255, 0, .6),
+                    inset 0 0 10px rgba(0, 255, 0, .4);
+            }
+        }
+
+
+        .generateUrl {
+            flex-direction: column;
+            gap: 50px;
+            padding: 2.5rem;
+            box-shadow: 0px 0px 30px black;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            max-width: 50%;
+            font-size: 1.4rem;
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .generateUrl input {
+            font-size: 1.3rem;
+            outline: none;
+            border: 1px solid white;
+            box-shadow: 0 0 5px rgba(210, 50, 14, 0.2),
+                inset 0 0 5px rgba(247, 5, 1, 0.1);
+            animation: glow .8s ease-out infinite alternate;
+        }
+
+        .generateUrl input:focus {
+            color: rgb(16, 23, 16);
+            box-shadow: 0 0 5px rgba(0, 255, 0, .2),
+                inset 0 0 5px rgba(0, 255, 0, .1);
+            animation: glow .8s ease-out infinite alternate;
+        }
+
+        .generateUrl button {
+            font-size: 1.3rem;
+        }
+
+        .back {
+            flex-direction: column;
+            gap: 50px;
+            padding: 2.5rem;
+            box-shadow: 0px 0px 30px black;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            max-width: 27%;
+            font-size: larger;
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="/url">
+
+
+        <header>
+            <div class="navContainer">
+                <nav>
+                    <ul class="navList">
+                        <li>
+                            <p id="navlogo" style="font-size: 1.4rem;">SUS - Short URL Service Provider</p>
+                        </li>
+                        <li>
+                            <div class="navItems">
+                                <a class="navItems-home" href="http://localhost:8000/">Home</a>
+                                <a class="navItems-contact" href="http://localhost:8000/contact">Contact</a>
+                                <a class="navItems-about" href="http://localhost:8000/about">About</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="generateUrl">
+            <label>Enter your Original URL: </label>
+            <input type="text" name="url" placeholder="https://example.com">
+            <button type="submit">Generate</button>
+        </div>
+
+
+
+        <div class="maincontent">
+
+            <% if (locals.id) { %>
+                <p>Generated URL: <span style="font-size: 2rem;">http://localhost:8000/<%= id %></span>
+                </p>
+                <% } %>
+
+                    <% if (locals.urls) { %>
+                        <table>
+                            <thead>
+                                <th>Sr.No</th>
+                                <th>ShortId</th>
+                                <th>Redirect</th>
+                                <th>Clicks</th>
+                                <th>Go To</th>
+                            </thead>
+
+                            <tbody>
+                                <% urls.forEach((url, index)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= index + 1 %>
+                                        </td>
+                                        <td>
+                                            <%= url.shortId %>
+                                        </td>
+                                        <td>
+                                            <%= url.redirectUrl %>
+                                        </td>
+                                        <td>
+                                            <%= url.visitHistory.length %>
+                                        </td>
+                                        <td>
+                                            <a style="color: black; font-size: 1rem;"
+                                                href="http://localhost:8000/<%= url.shortId %>" target="_blank"
+                                                rel="noopener noreferrer">Click Me</a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                        <% } %>
+
+        </div>
+
+
+        <% if (locals.id) { %>
+            <div class="back">
+                <a href="http://localhost:8000/" style="color: black;">Back</a>
+            </div>
+            <% } %>
+
+
+    </form>
+
+</body>
+
+</html>
